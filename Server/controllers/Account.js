@@ -50,6 +50,7 @@ class Account {
     db.query(GET_ACCOUNT_DETAILS, [req.params.accNo]).then((account) => {
       if(account.rows[0]){
         res.status(200).send({
+          Message:'Account(s) found,',
           status: 200,
           data: account.rows[0]
         });
